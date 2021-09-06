@@ -1,0 +1,31 @@
+{
+  "name": "the_wine_list",
+  "version": "1.0.0",
+  "description": "An app for filtering preferred wines",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "herokue-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "S Kingston",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.3",
+    "bcryptjs": "^2.4.3",
+    "client": "file:client",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.4",
+    "normalize-url": "^4.5.1"
+  }
+}
