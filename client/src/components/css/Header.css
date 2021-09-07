@@ -1,0 +1,14 @@
+.heading-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-family: "Playfair Display", serif; */
+  /* font-family: "Roboto Slab", serif; */
+  font-family: "Arima Madurai", cursive;
+  font-weight: 100;
+  font-size: 3rem;
+  color: #0d335d;
+  margin: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

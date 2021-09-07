@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: #032942; */
+  background-color: #fff;
+  letter-spacing: 1px;
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  background-color: #1a508b;
+  padding: 5px 25px;
+  color: white;
+  font-size: 18px;
+  border: #1a508b 1px solid;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #1a508b;
+}
+
+button:active {
+  background-color: #1a508b;
+}
+
+button:focus {
+  border: 1px solid #1a508b;
+}

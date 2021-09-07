@@ -1,0 +1,15 @@
+.card {
+  display: block;
+  background-color: #1a508b;
+  color: #fff;
+  padding: 2rem 1rem;
+  margin: 0 0 1rem 0;
+}
+hr {
+  margin: 1rem 0;
+  width: 20%;
+}
+
+a {
+  text-decoration: none;
+}
