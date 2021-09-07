@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
@@ -9,9 +10,11 @@ connectDB();
 
 // Initalize Middleware
 app.use(express.json({ extended: false }));
-app.use(cors({
-  origin: 'http://localhost:3000',
-}))
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 // app.get("/", (req, res) => res.send("API Running"));
 
@@ -21,10 +24,10 @@ app.use("/wine", require("./routes/api/wine"));
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {
-    res.sendFire(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFire(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
