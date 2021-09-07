@@ -67,7 +67,7 @@ export async function requestWines(
     }
   }
 
-  const PORT = process.env.PORT || 1337; 
+  const PORT = process.env.PORT; 
   const api = `http://localhost:${PORT}/wine?`;
 
   const apiCall = api + endpointArr.join("&");
