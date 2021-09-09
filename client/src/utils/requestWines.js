@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export async function requestWines(
   wine,
   wineBody,
@@ -20,8 +22,8 @@ export async function requestWines(
     sweetEndpoint,
     tanninEndpoint,
   ];
-  
-  // Refactor with a loop 
+
+  // Refactor with a loop
   if (wine === "") {
     const index = endpointArr.indexOf(typeEndpoint);
     console.log(index);
@@ -67,14 +69,25 @@ export async function requestWines(
     }
   }
 
-  const PORT = process.env.PORT; 
-  const api = `http://localhost:${PORT}/wine?`;
 
-  const apiCall = api + endpointArr.join("&");
-  const res = await fetch(apiCall);
-  const json = await res.json();
-  const data = json.data.wines
-  console.log(data)
-  setWines(data);
-  return;
+  
+  try {
+    const api = `http://localhost:1337/wine?`;
+    const apiCall = api + endpointArr.join("&");
+    
+    const config = {
+      headers: {
+        'Content-Type': "application/json"
+      }
+    }
+    
+    const res = await axios.get(apiCall, config)
+    const json = await res.data
+    const data = json.data.wines;
+    console.log(data);
+    setWines(data);
+    return;
+  } catch (err) {
+    console.log(err);
+  }
 }
